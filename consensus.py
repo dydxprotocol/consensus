@@ -11,8 +11,8 @@ ERR_MSG = f"\033[91m[ERR] API endpoint unreachable: api\n" \
           f"Bugreports Discord: Yep++#9963\033[0m"
 
 # replace with query endpoints
-REST = "https://dydx-ops-rest.kingnodes.com"
-RPC = "https://dydx-ops-rpc.kingnodes.com"
+REST = "http://127.0.0.1:1317"
+RPC = "http://127.0.0.1:26657"
 
 def handle_request(api: str, pattern: str):
     try:
