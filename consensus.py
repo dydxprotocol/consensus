@@ -16,8 +16,8 @@ RPC = "http://127.0.0.1:26657"
 
 def handle_request(api: str, pattern: str):
     try:
-
-        response = loads(request.urlopen(f"{api}/{pattern}").read())
+        r = request.Request(url=f"{api}/{pattern}",headers={'User-Agent': 'Mozilla/5.0'})
+        response = loads(request.urlopen(r).read())
         return response if response is not None else exit(ERR_MSG.replace('api', api))
 
     except Exception:
